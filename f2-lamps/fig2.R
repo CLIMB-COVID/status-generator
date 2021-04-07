@@ -24,7 +24,7 @@ p <- ggplot(df, aes(x=date, y=service)) + geom_tile(aes(fill=go)) +
     scale_x_date(expand=c(0.0,0.0), date_labels = "%d", date_breaks = "1 day") +
     scale_y_discrete(expand=c(0,0)) +
     facet_grid(~year+month, scales="free_x", space = "free_x", switch="both") +
-    scale_fill_manual(values = c("TRUE" = "#006164", "FALSE" = "#DB4325")) +
+    scale_fill_manual(values = c("TRUE" = "#005AB5", "FALSE" = "#DC3220")) +
     theme(
         axis.title=element_text(size=8, colour="#8B7968"),
         axis.text.x=element_text(size=5, angle=90, hjust=0.5, vjust=0.5),
