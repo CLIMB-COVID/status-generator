@@ -10,7 +10,7 @@
 
 <h2>Figures</h2>
 
-<a href="#service-status">Service status by date</a>
-<a href="#daily-genomes">Genomes by published date</a>
-<a href="#collection-genomes">Genomes by collection date</a>
-<a href="#total-genomes">Cumulative processed genomes</a>
+<a href="#service-status">Service status by date</a></br>
+<a href="#daily-genomes">Genomes by published date</a></br>
+<a href="#collection-genomes">Genomes by collection date</a></br>
+<a href="#total-genomes">Cumulative processed genomes</a></br>
