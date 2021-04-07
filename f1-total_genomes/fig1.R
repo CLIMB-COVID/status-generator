@@ -1,7 +1,10 @@
 library(tidyverse)
 library(hrbrthemes)
 
-df <- read_tsv("dat/pags.tsv")
+args = commandArgs(trailingOnly=TRUE)
+
+df <- read_tsv(args[1])
+df <- df[df$published_date <= args[2],]
 
 dfc <- df %>% 
     group_by(published_date) %>%
@@ -40,5 +43,7 @@ ggsave("dat/fig1.png", width=16, height=7, unit="cm")
 
 # Output basic metadata
 total_pags <- nrow(df)
-dft <- data.frame(c(total_pags))
+today_pags <- nrow(df[df$published_date == args[2],])
+
+dft <- data.frame(c(total_pags), c(today_pags))
 write_tsv(dft, 'dat/fig1.dat', col_names=F)
