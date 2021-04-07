@@ -11,7 +11,7 @@ df <- df %>%
     complete(service, date = seq.Date(min(df$date), as.Date(args[2]), by="days"))
 df[is.na(df$go),]$go <- FALSE
 
-CUTOFF_DAYS <- 180
+CUTOFF_DAYS <- 90
 start_cutoff <- as.Date(args[2]) - CUTOFF_DAYS # N days ago
 df <- df[df$date >= start_cutoff,]
 df <- df[df$date <= as.Date(args[2]),]
