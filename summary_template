@@ -1,6 +1,6 @@
-<b>Genomes today</b></br>
 <span style="font-size: 2em">PLACEHOLDER_GENOMES_TODAY</span>
-<br/>
-<b>Genomes total</b></br>
+<h4>Genomes today</h4>
+
 <span style="font-size: 2em">PLACEHOLDER_GENOMES_TOTAL</span>
-<br/>
+<h4>Genomes total</h4>
+
