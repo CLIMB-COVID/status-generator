@@ -1,9 +1,13 @@
+<h2>Summary</h2>
+
 <span style="font-size: 2em">PLACEHOLDER_GENOMES_TODAY</span>
-<h4>Genomes today</h4>
+<h3>Genomes today</h3>
 
 <span style="font-size: 2em">PLACEHOLDER_GENOMES_TOTAL</span>
-<h4>Genomes total</h4>
+<h3>Genomes total</h3>
 
 <hr>
+
+<h2>Figures</h2>
 
 <a href="#total-genomes">Cumulative processed genomes</a>
