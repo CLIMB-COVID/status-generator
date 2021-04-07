@@ -8,12 +8,14 @@ mkdir build
 mkdir build/graphs
 mkdir build/_includes
 
-DATE=`date +'%Y-%m-%d'`
+DATE=`date -d $1 +'%Y-%m-%d'`
 
 scp $PAG_TSV dat/pags.tsv
 
 Rscript f1-total_genomes/fig1.R dat/pags.tsv $DATE
 read TOTAL_PAGS TODAY_PAGS < <(head dat/fig1.dat)
+
+cp dat/fig1b.png build/graphs/fig1b.png
 
 python f1-total_genomes/fig1.py $TOTAL_PAGS
 
