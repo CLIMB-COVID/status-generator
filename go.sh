@@ -16,6 +16,7 @@ Rscript f1-total_genomes/fig1.R dat/pags.tsv $DATE
 read TOTAL_PAGS TODAY_PAGS < <(head dat/fig1.dat)
 
 cp dat/fig1b.png build/graphs/fig1b.png
+cp dat/fig1c.png build/graphs/fig1c.png
 
 python f1-total_genomes/fig1.py $TOTAL_PAGS
 

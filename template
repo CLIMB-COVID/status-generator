@@ -5,9 +5,15 @@
 
 ***
 
-## <a name="daily-genomes"></a>[Daily processed genomes](#daily-genomes)
+## <a name="daily-genomes"></a>[Processed genomes by published date](#daily-genomes)
 
 <img src="graphs/fig1b.png" width="100%">
+
+
+## <a name="collection-genomes"></a>[Processed genomes by sample collection date](#collection-genomes)
+
+<img src="graphs/fig1c.png" width="100%">
+
 
 ## <a name="total-genomes"></a>[Cumulative processed genomes](#total-genomes)
 
