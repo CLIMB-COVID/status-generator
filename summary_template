@@ -4,3 +4,6 @@
 <span style="font-size: 2em">PLACEHOLDER_GENOMES_TOTAL</span>
 <h4>Genomes total</h4>
 
+<hr>
+
+<a href="#total-genomes">Cumulative processed genomes</a>
