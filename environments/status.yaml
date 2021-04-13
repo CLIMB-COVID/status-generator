@@ -1,0 +1,14 @@
+name: status
+channels:
+  - conda-forge
+  - r
+  - defaults
+dependencies:
+  - r-essentials
+  - r-base
+  - r-tidyverse
+  - r-hrbrthemes
+  - r-lubridate
+  - pip
+  - pip:
+    - Pillow
