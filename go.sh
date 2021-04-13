@@ -10,6 +10,8 @@ mkdir build/_includes
 
 DATE=`date -d $1 +'%Y-%m-%d'`
 
+echo $DATE > build/report_date
+
 # Load dat
 scp $PAG_TSV dat/pags.tsv
 scp $LAMPS_TSV dat/lamps.tsv
