@@ -1,3 +1,5 @@
+set -euo pipefail
+
 source .env
 
 rm -rf dat
@@ -44,3 +46,5 @@ cat summary_template | \
 
 mkdir build/assets
 cp -r assets/public/* build/assets
+
+./deploy.sh

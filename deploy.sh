@@ -1,3 +1,5 @@
+set -euo pipefail
+
 source .env
 
 read REPORT_DATE < <(head build/report_date)
