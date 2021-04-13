@@ -1,4 +1,4 @@
-name: status
+name: climb-status-generator
 channels:
   - conda-forge
   - r
@@ -9,6 +9,7 @@ dependencies:
   - r-tidyverse
   - r-hrbrthemes
   - r-lubridate
+  - python>=3.7
   - pip
   - pip:
     - Pillow
