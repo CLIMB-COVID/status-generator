@@ -16,7 +16,6 @@ echo $DATE > build/report_date
 
 # Load dat
 scp $PAG_TSV dat/pags.tsv
-scp $LAMPS_TSV dat/lamps.tsv
 
 
 # F1
@@ -31,6 +30,7 @@ python f1-total_genomes/fig1.py $TOTAL_PAGS
 
 
 # F2
+./make_lamps.sh
 Rscript f2-lamps/fig2.R dat/lamps.tsv $DATE
 cp dat/fig2.png build/graphs/fig2.png
 
