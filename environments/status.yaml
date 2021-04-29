@@ -9,6 +9,8 @@ dependencies:
   - r-tidyverse
   - r-hrbrthemes
   - r-lubridate
+  - r-ggrepel
+  - r-patchwork
   - python>=3.7
   - pip
   - pip:
