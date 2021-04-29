@@ -34,6 +34,12 @@ python f1-total_genomes/fig1.py $TOTAL_PAGS
 Rscript f2-lamps/fig2.R dat/lamps.tsv $DATE
 cp dat/fig2.png build/graphs/fig2.png
 
+# S1
+wget -O dat/case_counts.ukgov_latest.csv 'https://api.coronavirus.data.gov.uk/v2/data?areaType=overview&metric=cumCasesBySpecimenDate&metric=newCasesBySpecimenDate&format=csv'
+Rscript s1/fig1.R dat/pags.tsv $DATE s1/annotations.tsv dat/case_counts.ukgov_latest.csv
+cp dat/s1.png build/graphs/s1.png
+
+
 # Build
 ## Index
 sed "s,PLACEHOLDER_DATE,$DATE,g" template > build/index.md
