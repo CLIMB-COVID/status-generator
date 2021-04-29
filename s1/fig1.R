@@ -23,6 +23,7 @@ dfc <- left_join(dfc, annotations)
 dfc$pag_count_cumsum <- cumsum(dfc$pag_count)
 filtered <- dfc %>% filter(label != "")
 
+big_count <- format(sum(dfc$pag_count), big.mark = ",", scientific = FALSE)
 p1 <- ggplot(dfc, aes(x=published_date, y=pag_count_cumsum)) +
     geom_area(
     ) +
@@ -65,6 +66,7 @@ p1 <- ggplot(dfc, aes(x=published_date, y=pag_count_cumsum)) +
         ylim = c(NA, NA),
         nudge_y=50000,
     ) +
+    annotate(geom='text', label=big_count, x=max(df$published_date)-1, y=15000, vjust = "inward", hjust = "right", colour="white", size=6, alpha=0.5) +
     xlab("Date") +
     ylab("Cumulative genomes processed by\nElan on CLIMB-COVID")
 
