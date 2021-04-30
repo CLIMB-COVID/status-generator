@@ -2,6 +2,8 @@ library(tidyverse)
 library(hrbrthemes)
 library(ggrepel)
 library(patchwork)
+library(lubridate)
+
 
 args = commandArgs(trailingOnly=TRUE)
 
@@ -71,17 +73,31 @@ p1 <- ggplot(dfc, aes(x=published_date, y=pag_count_cumsum)) +
     ylab("Cumulative genomes processed by\nElan on CLIMB-COVID")
 
 
-p2 <- ggplot(dfc, aes(x=published_date, y=pag_count)) +
+#dfe <- df %>% 
+#    mutate(collection_date = coalesce(collection_date, received_date)) %>% # Use received date if collection missing
+#    group_by(collection_date) %>%
+#    summarise(pag_count = n())
+#dfe[is.na(dfe$pag_count),]$pag_count <- 0
+#p2 <- ggplot(dfe, aes(x=collection_date, y=pag_count)) +
+
+dfc_week <- df %>%
+    group_by(week_start = cut(published_date, "week", start.on.monday = TRUE)) %>%
+    arrange(week_start) %>%
+    summarise(pag_count = n())
+
+print(dfc_week, n=100)
+
+p2 <- ggplot(dfc_week, aes(x=as.Date(week_start), y=pag_count)) +
     geom_bar(
         stat='identity',
-        width=1,
+        width=7,
     ) +
     scale_x_date(expand=c(0,0), date_labels = "%b\n%Y", date_breaks = "1 month", limit=c(as.Date("2020-03-01"),max(df$published_date)), position="top") +
     scale_y_continuous(
         expand=c(0,0),
-        limit=c(0, max(dfc$pag_count)+5000),
+        limit=c(0, max(dfc_week$pag_count)+5000),
         labels=scales::comma,
-        breaks=seq(0,max(dfc$pag_count+5000),5000)[-1],
+        breaks=seq(0,max(dfc_week$pag_count+10000),10000)[-1],
         minor_breaks=c(),
     ) +
     common_theme +
@@ -101,7 +117,7 @@ p2 <- ggplot(dfc, aes(x=published_date, y=pag_count)) +
 
         axis.text.x = element_blank(),
     ) +
-    ylab("Processed\ngenomes")
+    ylab("Weekly\ngenomes")
 
 
 gov_df <- read_csv(args[4])
