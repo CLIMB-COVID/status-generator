@@ -1,3 +1,8 @@
+#!/usr/bin/bash
+
+eval "$(conda shell.bash hook)"
+conda activate climb-status-generator
+
 set -euo pipefail
 
 source .env
@@ -10,7 +15,7 @@ mkdir build
 mkdir build/graphs
 mkdir build/_includes
 
-DATE=`date -d $1 +'%Y-%m-%d'`
+DATE=`date -d $ELAN_DATE +'%Y-%m-%d'`
 
 echo $DATE > build/report_date
 
