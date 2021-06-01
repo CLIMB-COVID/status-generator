@@ -15,9 +15,10 @@ df <- read_tsv(args[1])
 df <- df[df$published_date <= args[2],]
 
 dfc <- df %>% 
-    complete(published_date=seq.Date(min(published_date), max(published_date), by="day")) %>% # add missing days so we can annotate them
     group_by(published_date) %>%
-    summarise(pag_count = n())
+    summarise(pag_count = n()) %>%
+    complete(published_date=seq.Date(min(published_date), max(published_date), by="day")) # add missing days so we can annotate them, AFTER counting
+dfc$pag_count <- replace_na(dfc$pag_count, 0) # change NA to 0
 
 annotations <- read_delim(args[3], delim='\t', escape_backslash=TRUE, escape_double=FALSE)
 dfc <- left_join(dfc, annotations)
