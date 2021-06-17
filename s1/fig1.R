@@ -67,7 +67,7 @@ p1 <- ggplot(dfc, aes(x=published_date, y=pag_count_cumsum)) +
         segment.size=0.25,
         lineheight=1,
         ylim = c(NA, NA),
-        nudge_y=50000,
+        nudge_y=75000,
     ) +
     annotate(geom='text', label=big_count, x=max(df$published_date)-1, y=15000, vjust = "inward", hjust = "right", colour="white", size=6, alpha=0.5) +
     xlab("Date") +
