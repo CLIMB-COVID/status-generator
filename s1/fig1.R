@@ -33,7 +33,7 @@ p1 <- ggplot(dfc, aes(x=published_date, y=pag_count_cumsum)) +
     scale_x_date(expand=c(0,0), date_labels = "%b\n%Y", date_breaks = "1 month", limit=c(as.Date("2020-03-01"),max(df$published_date)), position="bottom") +
     scale_y_continuous(
         expand=c(0.0,0),
-        breaks=seq(0,sum(dfc$pag_count),50000)[-1],
+        breaks=seq(0,sum(dfc$pag_count),100000)[-1],
         minor_breaks=c(),
         labels=scales::comma,
         limits=c(0,sum(dfc$pag_count)+10000)
@@ -67,7 +67,7 @@ p1 <- ggplot(dfc, aes(x=published_date, y=pag_count_cumsum)) +
         segment.size=0.25,
         lineheight=1,
         ylim = c(NA, NA),
-        nudge_y=75000,
+        nudge_y=225000,
     ) +
     annotate(geom='text', label=big_count, x=max(df$published_date)-1, y=15000, vjust = "inward", hjust = "right", colour="white", size=6, alpha=0.5) +
     xlab("Date") +
