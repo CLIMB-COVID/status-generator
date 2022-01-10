@@ -122,6 +122,7 @@ p2 <- ggplot(dfc_week, aes(x=as.Date(week_start), y=pag_count)) +
 
 
 gov_df <- read_csv(args[4])
+gov_df <- gov_df[!is.na(gov_df$newCasesBySpecimenDate),] # drop days where new cases are null as we cannot use them
 head(gov_df)
 p3 <- ggplot(gov_df, aes(x=date, y=newCasesBySpecimenDate)) +
     geom_bar(
