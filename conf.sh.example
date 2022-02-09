@@ -1,0 +1,4 @@
+export STATUS_SOFTWARE_DIR=""
+export CONDA_STATUS_GEN=""
+export DEPLOY_DIR=""
+export PAG_TSV="" # tatltale
