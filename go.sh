@@ -1,11 +1,12 @@
 #!/usr/bin/bash
+source /cephfs/covid/software/eagle-owl/scripts/hootstrap.sh
+source "$EAGLEOWL_CONF/common.sh"
+source "$EAGLEOWL_CONF/status_generator/conf.sh"
 
 eval "$(conda shell.bash hook)"
-conda activate climb-status-generator
+conda activate $CONDA_STATUS_GEN
 
 set -euo pipefail
-
-source .env
 
 rm -rf dat
 mkdir dat

@@ -1,6 +1,8 @@
-set -euo pipefail
+source /cephfs/covid/software/eagle-owl/scripts/hootstrap.sh
+source "$EAGLEOWL_CONF/common.sh"
+source "$EAGLEOWL_CONF/status_generator/conf.sh"
 
-source .env
+set -euo pipefail
 
 read REPORT_DATE < <(head build/report_date)
 cp -r build/* $DEPLOY_DIR
