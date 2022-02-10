@@ -1,6 +1,6 @@
-source ~/.bootstrap.sh
-source $EAGLEOWL_CONF/paths.env
-source $EAGLEOWL_CONF/asklepian.env
+source /cephfs/covid/software/eagle-owl/scripts/hootstrap.sh
+source "$EAGLEOWL_CONF/common.sh"
+source "$EAGLEOWL_CONF/asklepian/conf.sh"
 
 echo -e 'service\tdate' > dat/lamps.tsv
 
