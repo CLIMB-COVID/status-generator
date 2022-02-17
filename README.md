@@ -1,6 +1,8 @@
 # status-generator
 
-### Set up git push
+## Set up git push
+
+### With SSH
 
 Add a Host to your ssh config
 
@@ -14,3 +16,10 @@ Clone the repo
 
     git clone git@git-as-username:CLIMB-COVID/status.git
 
+### With PAT
+
+Generate a `repo` scope token: https://github.com/settings/tokens
+
+Clone the repo:
+
+    git clone https://git-user:TOKEN@github.com/CLIMB-COVID/status.git
