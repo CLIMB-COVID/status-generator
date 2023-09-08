@@ -6,7 +6,7 @@ source "$EAGLEOWL_CONF/status_generator/conf.sh"
 eval "$(conda shell.bash hook)"
 conda activate $CONDA_STATUS_GEN
 
-set -euo pipefail
+set -uo pipefail
 
 rm -rf dat
 mkdir dat
@@ -42,8 +42,12 @@ cp dat/fig2.png build/graphs/fig2.png
 
 # S1
 wget -O dat/case_counts.ukgov_latest.csv 'https://api.coronavirus.data.gov.uk/v2/data?areaType=overview&metric=cumCasesBySpecimenDate&metric=newCasesBySpecimenDate&format=csv'
-Rscript s1/fig1.R dat/pags.tsv $DATE s1/annotations.tsv dat/case_counts.ukgov_latest.csv
-cp dat/s1.png build/graphs/s1.png
+
+ret=$?
+if [ $ret -eq 0 ]; then
+    Rscript s1/fig1.R dat/pags.tsv $DATE s1/annotations.tsv dat/case_counts.ukgov_latest.csv
+    cp dat/s1.png build/graphs/s1.png
+fi
 
 
 # Build

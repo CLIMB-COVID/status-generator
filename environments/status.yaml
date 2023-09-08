@@ -4,6 +4,7 @@ channels:
   - r
   - defaults
 dependencies:
+  - wget
   - r-essentials
   - r-base
   - r-tidyverse
