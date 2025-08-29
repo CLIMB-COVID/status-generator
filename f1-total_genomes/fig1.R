@@ -14,10 +14,10 @@ p <- ggplot(dfc, aes(x=published_date, y=cumsum(pag_count))) +
     geom_area(
         fill="#002366"
     ) +
-    scale_x_date(expand=c(0,0), date_labels = "%b\n%Y", date_breaks = "1 month", limit=c(as.Date("2020-03-01"),max(df$published_date))) +
+    scale_x_date(expand=c(0,0), date_labels = "%b\n%Y", date_breaks = "6 months", limit=c(as.Date("2020-03-01"),max(df$published_date))) +
     scale_y_continuous(
         expand=c(0.0,0),
-        breaks=seq(0,sum(dfc$pag_count),100000),
+        breaks=seq(0,sum(dfc$pag_count),200000),
         minor_breaks=c(),
         labels=scales::comma,
         limits=c(0,sum(dfc$pag_count)+10000)
